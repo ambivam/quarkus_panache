@@ -1,6 +1,8 @@
 package org.quarkus;
 
 import org.hibernate.annotations.Target;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -9,8 +11,11 @@ import java.util.List;
 @RestController
 public class GreetingController {
 
+    Logger logger = LoggerFactory.getLogger(GreetingController.class);
+
     @GetMapping("/hello")
     public String hello() {
+        logger.trace("Executing end point hello");
         return "Hello Spring";
     }
 

@@ -12,7 +12,7 @@ public class GreetingControllerTest {
     @Test
     public void testHelloEndpoint() {
         given()
-          .when().get("/greeting")
+          .when().get("/hello")
           .then()
              .statusCode(200)
              .body(is("Hello Spring"));
